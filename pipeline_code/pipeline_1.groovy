@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Pull') {
             steps {
-                git branch: 'main-code', url: 'https://github.com/Vickybarai/jenkines.git'
+                git branch: 'master', url: 'https://github.com/Vickybarai/jenkines.git'
                 echo 'Pulling code from repository...'
             }
         }
