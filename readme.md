@@ -8,3 +8,9 @@ trigger_1_declarative_commit :done
 
 ---
 trigger_2_scripted-node_commit :done
+
+---
+trigger_3_declarative_commit :done
+
+---
+trigger_4_declarative_commit :done
