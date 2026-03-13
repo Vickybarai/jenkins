@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('PULL'){
             steps{
-                git branch: 'main-code', url: 'https://github.com/Vickybarai/CURD_app.git'
+                git branch: 'master', url: 'https://github.com/Vickybarai/jenkines.git'
             }
         }
         stage ('BUILD'){
