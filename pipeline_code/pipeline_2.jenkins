@@ -1,28 +1,40 @@
 pipeline {
     agent any
+
     stages {
         stage('PULL'){
             steps{
                 git branch: 'master', url: 'https://github.com/Vickybarai/jenkins.git'
             }
         }
-        stage ('BUILD'){
+
+        stage('BUILD'){
             steps{
                 sh '''
-                    cd backend
+                    pwd
+                    ls -l
+                    cd backend || exit 1
                     mvn clean package -DskipTests
                 '''
             }
         }
-        stage ('TEST'){
+
+        stage('TEST'){
             steps{
                 echo 'TEST SUCCESS'
             }
         }
-        stage ('DEPLOY'){
+
+        stage('DEPLOY'){
             steps{
                 echo 'DEPLOY SUCCESS'
             }
+        }
+    }
+
+    post {
+        always {
+            echo 'PIPELINE EXECUTED'
         }
     }
 }
